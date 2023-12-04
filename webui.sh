@@ -65,7 +65,7 @@ then
 fi
 
 # this script cannot be run as root by default
-can_run_as_root=0
+can_run_as_root=1
 
 # read any command line flags to the webui.sh script
 while getopts "f" flag > /dev/null 2>&1
@@ -188,7 +188,7 @@ else
     printf "\n%s\n" "${delimiter}"
     printf "Clone stable-diffusion-webui"
     printf "\n%s\n" "${delimiter}"
-    "${GIT}" clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git "${clone_dir}"
+    "${GIT}" clone https://github.com/wjervis7/stable-diffusion-webui.git "${clone_dir}"
     cd "${clone_dir}"/ || { printf "\e[1m\e[31mERROR: Can't cd to %s/%s/, aborting...\e[0m" "${install_dir}" "${clone_dir}"; exit 1; }
 fi
 
